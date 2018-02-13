@@ -870,6 +870,9 @@ void WindowImplX11::setVisible(bool visible)
     if (visible)
     {
         XMapWindow(m_display, m_window);
+        
+        if(m_fullscreen)
+            switchToFullscreen();
 
         XFlush(m_display);
 
